@@ -6,7 +6,7 @@ ex03: 어플리케이션2: ES6 모듈 시스템
 ex04: 번들링: webpack
 ex05: React API 기반의 어플리케이션 리팩토링
 ex06: React JSX 기반의 어플리케이션 리팩토링: babel(transpile)
-ex07: ex00.cra Reconfiguration(내가 직접 설정...)
+ex07: ex00.cra Reconfiguration(내가 직접 설정)
 ex08: JSX Tutorial
 
 webpack-Practices
