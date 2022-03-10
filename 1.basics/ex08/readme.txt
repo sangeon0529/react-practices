@@ -5,10 +5,9 @@ ex08: JSX Tutorials
 03. 함수 컴포넌트 만들기
 04. Pure React(React API)로 컴포넌트 작성하기
 05. 클래스 컴포넌트 만들기
-06. 특징3: JSX 표현식 표기법({js expression})과 문제점
-07. 특징4: 공백
-08. Dynamic HTML Renderong
-09. Comment
+06. 특징3: JSX 표현식 표기법({js expression})과 문제점, 공백
+07. Dynamic HTML Renderong
+08. Comment
 
 count +1
 f()
