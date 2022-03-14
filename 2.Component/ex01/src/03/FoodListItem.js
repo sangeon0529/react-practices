@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FoodListItem = (name, quantity) => {
+const FoodListItem = ({name, quantity}) => {
   return (
     <li>{name}:{quantity}</li>
   )
