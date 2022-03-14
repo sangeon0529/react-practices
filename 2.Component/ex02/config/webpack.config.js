@@ -13,10 +13,16 @@ module.exports = function(env) {
         rules:[{
             test: /\.js$/i,
             exclude: /node_modules/,
-            use : ['babel-loader']
+            loader : 'babel-loader',
+            options:{
+                configFile: path.resolve('config/babel.config.json')
+            }
         },{
             test: /\.(sa|c|sc)ss$/i,
-            use: ['style-loader','css-loader','sass-loader']
+            use: [
+                'style-loader',
+                {loader : 'css-loader', options: { modules: env['css-modules'] !== 'false'}},
+                'sass-loader']
         }, {
             test: /\.(png|git|jpe?g|svg|ico|tiff?|bmp)$/i,
             type: 'asset/resource'
