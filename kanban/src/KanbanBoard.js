@@ -7,7 +7,7 @@ const KanbanBoard = () => {
   console.log(cards)
   return (
     <div className={styles.KanbanBoard}>
-        <CardList title = {'ToDo'}/>   
+        <CardList title = {'ToDo'} cards={} />   
         <CardList title = {'Doing'}/>   
         <CardList title = {'Done'}/>   
     </div>
