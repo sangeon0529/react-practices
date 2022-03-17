@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class extends Component {
     constructor() {
-        super(...arguments);
+        super(...arguments); //...은 여러개가 들어올 수 있다.
         this.state = {
             step: this.props.step,
             val: this.props.begin
