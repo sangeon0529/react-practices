@@ -1,7 +1,9 @@
-import React, { Fragment } from 'react'
+import React, { useState } from 'react'
 import styles from './assets/css/Card.css'
 import TaskList from './TaskList.js'
 const Card = ({title,description,tasks}) => {
+  const [showDetails, setShowDetails] = useState(false);
+
   console.log(title)
   return (
     

@@ -39,9 +39,12 @@ export default function Form() {
                 value={email}
                 onChange={onChangeInputEmail}
                 />
-                {       email===''?
+                {
+                       email===''?
                             null :
-                        validEmail ? <FontAwesomeIcon icon={faCheckCircle} style={{fontSize: 16, color:'blue'}}/> : <FontAwesomeIcon icon={faTimesCircle} style={{fontSize: 16, color:'red'}}/>
+                        validEmail ? 
+                            <FontAwesomeIcon icon={faCheckCircle} style={{marginLeft:5, fontSize: 16, color:'blue'}}/> : 
+                            <FontAwesomeIcon icon={faTimesCircle} style={{marginLeft:5, fontSize: 16, color:'red'}}/>
                 }
             <label htmlFor="password">패스워드</label>
             <input id="password" name="password" type="password" value={ "" } />
