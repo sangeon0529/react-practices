@@ -2,12 +2,19 @@ import React from 'react'
 import styles from './assets/scss/Emaillist.scss'
 import Email from './Email'
 
-const Emaillist = () => {
+const Emaillist = ({emails}) => {
   return (
     <ul className={styles.Emaillist}>
-        <Email />
-        <Email />
-        
+        {
+            emails.map(e => <Email 
+                             key={e.no}
+                              firstName={e.firstName}
+                              lastName={e.lastName}
+                              email={e.email}
+                              
+                              />
+                              )
+        }
         </ul>
   )
 }
