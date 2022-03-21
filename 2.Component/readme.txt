@@ -8,11 +8,11 @@ ex02 : Component Styling
 
 ex03 : React Event
 
-ex04 : Stat***
+ex04 : State***
 
 ex05 : Component Lifecycle
 
-ex06 : Immutablity(불변성) of Component's state
+ex06 : Immutablity(불변성) of Component's State
 
 AJAX : fetch(ES6 표준), axios
 

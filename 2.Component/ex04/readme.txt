@@ -14,7 +14,7 @@ ex04: Component - State
   2. 예제:  src/01
 
 02. 제어 컴포넌트
-    1. input, textarea, option고ㅏ 같은 폼 컴포넌트 중에 사용자 입력에 따서 state값이
+    1. input, textarea, option과 같은 폼 컴포넌트 중에 사용자 입력에 따서 state값이
       변경되고 렌더링 하는 컴포넌트를 제어(Controlled) 컴포넌트라 한다.
     2. 폼 컴포넌트를 제어 컴포넌트로 만드는 것은 조금 복잡해 보이지만 다음과 같은 장점이 있다.
       - 컴포넌트의 인터페이스를 외부에서 변경할 수 없고 내부의 상태 변경으로 가능하다는 것은 
@@ -48,7 +48,7 @@ ex04: Component - State
 
 1. 설치
 $ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react
-$ npm i react react-dom
+$ npm i react react-dom prop-types
 
 2. 설정
 config/webpack.config.js 설정
