@@ -10,9 +10,11 @@ ex03 : React Event
 
 ex04 : State***
 
-ex05 : Component Lifecycle
+ex05 : Immutablity(불변성) of Component's State
 
-ex06 : Immutablity(불변성) of Component's State
+ex06 : Component Lifecycle
+
+
 
 AJAX : fetch(ES6 표준), axios
 

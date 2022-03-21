@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from './assets/scss/Email.scss'
+import PropTypes from 'prop-types'
 
-const Email = ({no,firstName,lastName,email}) => {
+export default function Email ({no,firstName,lastName,email}) {
   
   return (
     <li className={styles.Email}>
@@ -12,4 +13,8 @@ const Email = ({no,firstName,lastName,email}) => {
   )
 }
 
-export default Email
+Email.propType = {
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired
+}
