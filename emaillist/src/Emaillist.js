@@ -6,11 +6,11 @@ const Emaillist = ({emails}) => {
   return (
     <ul className={styles.Emaillist}>
         {
-            emails.map(e => <Email 
-                             key={e.no}
-                              firstName={e.firstName}
-                              lastName={e.lastName}
-                              email={e.email}
+            emails.map(email => <Email 
+                             key={email.no}
+                              firstName={email.firstName}
+                              lastName={email.lastName}
+                              email={email.email}
                               
                               />
                               )

@@ -11,25 +11,25 @@ const Card = ({title,description,tasks}) => {
     
         <div className={styles.Card}>
             {showDetails == true ?
-            <Fragment>
-            <div className={styles.Card__Title__open}
-            onClick={onClickArrow}
-            >{title}</div>
-            
-            <div className='Card__Details'>{description}</div>
-            <TaskList 
-            task1={tasks}
-            />
-            </Fragment>
-            :
-            <Fragment>
-            <div className={styles.Card__Title}
-            onClick={onClickArrow}>
+              <Fragment>
+              <div className={styles.Card__Title__open}
+                onClick={onClickArrow}
+              >{title}</div>
               
-              {title}
-            </div>
-            
-            </Fragment>
+              <div className='Card__Details'>{description}</div>
+              <TaskList 
+              task1={tasks}
+              />
+              </Fragment>
+            :
+              <Fragment>
+                <div className={styles.Card__Title}
+                  onClick={onClickArrow}>
+                  
+                  {title}
+                </div>
+              
+              </Fragment>
           }
         </div>
    
