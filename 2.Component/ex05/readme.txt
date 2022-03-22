@@ -15,7 +15,7 @@ ex05: Component - Lifecycle
   3) Life III: Unmount
     *componentWillUnmount: 컴포넌트를 DOM에서 제거하기 전,
   
-## Alternative of Functional Component LifeCycle: useEffect Hook
+## Alternative(대용) of Functional Component LifeCycle: useEffect Hook
 1. src/02:
     - Alternative of getDerivedStateFromProps
     - After Rendering(Combination componentDidUpdate and componentDidMount)
