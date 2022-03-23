@@ -7,6 +7,7 @@ export default function Hook({ color }) {
 
     /**
      *   1. Alternative 01: getDerivedStateFromProps
+     *   if문에 걸리면 렌더링되고 컴포넌트가 한번 더 호출됨
      */
     if(boxColor !== color ) {
         setBoxColor(color);
@@ -28,12 +29,13 @@ export default function Hook({ color }) {
         console.log('Update Color(DB) Using APIs...');
     }, [boxColor]);
 
+
     /**
      *  4. Alternative 02: componentDidMount & componentWillUnmount
      */
     useEffect(() => {
-        console.log('After Mount(componentDidMount)');
-        return (function(){
+        console.log('After Mount(componentDidMount)'); // mount 될때 불림
+        return (function(){ //unmount될때 불림
             console.log('After Unmount(componentWillUnmount)');
         });
     }, []);
