@@ -32,6 +32,7 @@ export default function Hook({ color }) {
 
     /**
      *  4. Alternative 02: componentDidMount & componentWillUnmount
+     * 인풋 안주면 마운트 될 때 한번만 부름
      */
     useEffect(() => {
         console.log('After Mount(componentDidMount)'); // mount 될때 불림
