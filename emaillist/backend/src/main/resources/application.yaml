@@ -8,10 +8,6 @@ spring:
 spring:
    mvc:
 
-      # Spring MVC View Prefix/Suffix
-      view:
-         prefix: /WEB-INF/views/
-         suffix: .jsp
 
       # Path pattern used for static resources
       static-path-pattern: /assets/**
@@ -24,7 +20,7 @@ spring:
          static-locations: classpath:/static/
 
    thymeleaf:
-      prefix : classpath:templates/
+      prefix : classpath:templates/ #jsp는 절대로 templates에 못감
       check-template-location: true
       mode: HTML5
       suffix : .html
