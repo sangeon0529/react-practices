@@ -1,21 +1,14 @@
-# JavaScript Project
 **/node_modules
-
-# IDE(VSCode, Eclipse, Intelij), Maven
-**/.vscode
-**/.sln
-**/.sw?
 
 **/.classpath
 **/.project
 **/.settings
 **/target
-
+**/build
 
 **/.idea
 **/.iml
 
 **/build
 
-# for mac
 **/.DS_Store
