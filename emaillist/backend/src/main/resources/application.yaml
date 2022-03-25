@@ -7,8 +7,6 @@ spring:
 # common spring boot configuration
 spring:
    mvc:
-
-
       # Path pattern used for static resources
       static-path-pattern: /assets/**
 
@@ -20,7 +18,7 @@ spring:
          static-locations: classpath:/static/
 
    thymeleaf:
-      prefix : classpath:templates/ #jsp는 절대로 templates에 못감
+      prefix : classpath:templates/
       check-template-location: true
       mode: HTML5
       suffix : .html
@@ -33,10 +31,25 @@ spring:
       username: webdb
       password: webdb
 
+
+---
+# development profile: spring boot configuration
+spring:
+   config:
+      activate:
+         on-profile: development
+
+   # devtools - live reload
+   devtools:
+      livereload:
+         enabled: true
+
+
 ---
 # mybatis
 mybatis:
    config-location: classpath:mybatis/configuration.xml
+
    
 ---
 # server
@@ -47,4 +60,3 @@ server:
       encoding:
          charset: UTF-8
          enabled: true
-

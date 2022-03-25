@@ -32,8 +32,9 @@ const App = () => {
     console.log(response)
   }, [])
   
-  const notifyKeywordChange= function(kw){
-    setEmails(data.filter(e => e.firstName.indexOf(kw) != -1 || e.lastName.indexOf(kw) != -1|| e.email.indexOf(kw)!=-1))
+  const notifyKeywordChange= function(keyword){
+    console.log("/api?kw=" +keyword)
+    // setEmails(data.filter(e => e.firstName.indexOf(kw) != -1 || e.lastName.indexOf(kw) != -1|| e.email.indexOf(kw)!=-1))
   }
 
   return (
