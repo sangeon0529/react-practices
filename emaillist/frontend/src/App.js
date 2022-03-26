@@ -1,48 +1,98 @@
-import React, { useState, useEffect} from 'react'
-import './assets/scss/App.scss'
-import RegisterForm from './RegisterForm'
-import SearchBar from './SearchBar'
-import Emaillist from './Emaillist'
-import data from './assets/json/data.json'
+import React, {useState, useEffect} from 'react'
+import './assets/scss/App.scss';
+import RegisterForm from './RegisterForm';
+import SearchBar from './SearchBar';
+import Emaillist from './Emaillist';
 
 const App = () => {
-  const [emails, setEmails] = useState(data)
+  const [emails, setEmails] = useState([]);
 
   useEffect(async () => {
-    const response = await fetch('/api' , {
-      method: 'get',
-      headers: {
-        'Content-Type' : 'application/json',
-        'Accept' : 'application/json'
-      },
-      body:null
-    })
-    if(!response.ok){
-      console.log("error:",response.status,response.statusText)
-      return
-    }
+    try {  
+      const response = await fetch('/api', {
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: null
+      });
 
-    const json = await response.json();
-    if(json.result !== 'success'){
-      console.log("error:",json.message)
-      return;
-    }
+      if(!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`);
+      }
 
-    setEmails(json.data)
-    console.log(response)
-  }, [])
-  
-  const notifyKeywordChange= function(keyword){
-    console.log("/api?kw=" +keyword)
-    // setEmails(data.filter(e => e.firstName.indexOf(kw) != -1 || e.lastName.indexOf(kw) != -1|| e.email.indexOf(kw)!=-1))
+      const json = await response.json();
+
+      if(json.result !== 'success') {
+        throw new Error(`${json.result} ${json.message}`);
+      }
+      
+      setEmails(json.data);
+    } catch(err) {
+      console.log(err);      
+    }  
+  }, []);
+
+  const notifyKeywordChange = async function(keyword) {
+    try {  
+      const response = await fetch(`/api?kw=${keyword}`, {
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: null
+      });
+
+      if(!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`);
+      }
+
+      const json = await response.json();
+
+      if(json.result !== 'success') {
+        throw new Error(`${json.result} ${json.message}`);
+      }
+      
+      setEmails(json.data);
+    } catch(err) {
+      console.log(err);      
+    }     
+  }
+
+  const notifyEmailAdd = async function(email) {
+    try {  
+      const response = await fetch(`/api`, {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(email)
+      });
+
+      if(!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`);
+      }
+
+      const json = await response.json();
+
+      if(json.result !== 'success') {
+        throw new Error(`${json.result} ${json.message}`);
+      }
+      
+      setEmails([json.data, ...emails])
+    } catch(err) {
+      console.log(err);      
+    }     
   }
 
   return (
     <div className={'App'}>
-        <RegisterForm />
-        <SearchBar callback={notifyKeywordChange}/>
-        <Emaillist emails={emails} />
-
+      <RegisterForm callback={notifyEmailAdd}/>
+      <SearchBar callback={notifyKeywordChange}/>
+      <Emaillist emails={emails} />
     </div>
   )
 }
