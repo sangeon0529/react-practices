@@ -1,8 +1,37 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import CardList from './CardList'
 import styles from './assets/css/KanbanBoard.css'
+import { useState } from 'react'
 
 const KanbanBoard = () => {
+  const [cards, setCards] = useState([]);
+
+  useEffect(async () => {
+    try {  
+      const response = await fetch('/api', {
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: null
+      });
+
+      if(!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`);
+      }
+
+      const json = await response.json();
+
+      if(json.result !== 'success') {
+        throw new Error(`${json.result} ${json.message}`);
+      }
+      
+      setCards(json.data);
+    } catch(err) {
+      console.log(err);      
+    }  
+  }, []);
   // console.log(cards)
 
   // const result = [0,1,2,3,4].filter(e =>e%2===0);
