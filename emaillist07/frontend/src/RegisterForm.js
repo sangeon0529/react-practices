@@ -11,6 +11,7 @@ const RegisterForm = ({callback}) => {
         e.preventDefault();
 
         try {
+          console.log(e.target)
           const newEmail = Array.from(e.target, input => {
             // simple validation
             if(input.value === ''){
@@ -25,6 +26,7 @@ const RegisterForm = ({callback}) => {
           }, {});
 
           refForm.current.reset()
+          console.log(newEmail)
           callback(newEmail);
         } catch(err) {
           console.log(err.message);

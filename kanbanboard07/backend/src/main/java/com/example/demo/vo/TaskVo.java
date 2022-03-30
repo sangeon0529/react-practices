@@ -4,14 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Setter
 @Getter
+@Setter
 @ToString
-public class CardVo {
+public class TaskVo {
 	private Long no;
-	private String title;
-	private String description;
-	private String status;
-	
-	
+	private String name;
+	private String done;
+	private Long card_no;
 }

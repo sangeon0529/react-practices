@@ -1,14 +1,13 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import CardList from './CardList'
 import styles from './assets/css/KanbanBoard.css'
-import { useState } from 'react'
 
 const KanbanBoard = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(async () => {
     try {  
-      const response = await fetch('/api', {
+      const response = await fetch('/api/card', {
         method: 'get',
         headers: {
           'Content-Type': 'application/json',
