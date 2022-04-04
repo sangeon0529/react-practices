@@ -4,7 +4,7 @@ spring:
       active: development
 
 ---
-# common spring boot configuration
+# common configuration
 spring:
    mvc:
       # Path pattern used for static resources
@@ -33,7 +33,7 @@ spring:
 
 
 ---
-# development profile: spring boot configuration
+# development configuration
 spring:
    config:
       activate:
