@@ -18,14 +18,14 @@ public class GuestbookService {
 		return guestbookRepository.findAll(no);
 	}
 	
-	// @Transactional
+	 @Transactional
 	public boolean deleteMessage(Long no, String password) {
 		GuestbookVo vo = new GuestbookVo();
 		vo.setNo(no);
 		vo.setPassword(password);
 		
 		return guestbookRepository.delete(vo);
-		
+//		
 //		vo.setNo(null);
 //		vo.setName("안대혁");
 //		vo.setMessage("테스트");
