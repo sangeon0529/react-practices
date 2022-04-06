@@ -44,7 +44,7 @@ spring:
          
    web:
       resources:
-         static-locations: classpath:/static/, file:/Users/sangeonpark/upload-images/
+         static-locations: classpath:/assets/, file:/Users/sangeonpark/upload-images/
    devtools:
       livereload:
          enabled: true
@@ -81,7 +81,7 @@ spring:
          
    web:
       resources:
-         static-locations: classpath:/static/, file:/mysite-images/
+         static-locations: classpath:/assets/, file:/mysite-images/
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
       url: jdbc:mysql://192.168.0.55:3307/webdb?characterEncoding=utf8
